@@ -2,23 +2,15 @@
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 S
-#src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b
+#src/main/java/org/example/Main.java,0/b/0ba1b9c7a4878802f938e331cc2d8a042087ec6b
 K
 CompanyService/build.gradle,c\d\cd5849ce774d787e0423a6fb55dbad3570606564
-b
-2CompanyService/src/main/java/org/example/Main.java,b\6\b699198ca6daef48c9ea2edc56c53e6dd75e2e24
 H
 AuthService/build.gradle,4\2\422a76341f70bdfabc2f0cd4c4a256cae9ecef8a
-_
-/AuthService/src/main/java/org/example/Main.java,7\1\71d143c9065998771363a2537c5d01f2fd419b4d
 H
 UserService/build.gradle,a\5\a5aa623a677c1c39a9153575b6482c5bdbf6ddfc
-_
-/UserService/src/main/java/org/example/Main.java,c\4\c4126042fbb6b3f61293b880a7bd48bb017d3bf5
 L
 EmployeeService/build.gradle,7\a\7ac47dd153ee198cb1c09f09230bb0c344d03aba
-c
-3EmployeeService/src/main/java/org/example/Main.java,7\d\7d6eeef84358bbcfa2a2a6e8bae9233b51779b58
 C
 dependencies.gradle,9\2\9282de42fdd92f96bfdaa8eed76823d133cf1624
 q
@@ -87,3 +79,5 @@ v
 FEmployeeService/src/main/java/org/example/service/EmployeeService.java,d\8\d89f46f9adb353a1938351ffb0a48786ad7b5d2d
 |
 LEmployeeService/src/main/java/org/example/controller/EmployeeController.java,c\5\c5d4c296f215a3dcb59195af0016458c4c4a0d88
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

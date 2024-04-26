@@ -8,5 +8,7 @@ public class Main {
 
         System.out.printf("Gokce deneme");
 
+        System.out.printf("Meryem deneme 02");
+
     }
 }

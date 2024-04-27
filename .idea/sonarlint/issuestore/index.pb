@@ -2,7 +2,7 @@
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 S
-#src/main/java/org/example/Main.java,0/b/0ba1b9c7a4878802f938e331cc2d8a042087ec6b
+#src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b
 K
 CompanyService/build.gradle,c\d\cd5849ce774d787e0423a6fb55dbad3570606564
 H
@@ -81,3 +81,25 @@ FEmployeeService/src/main/java/org/example/service/EmployeeService.java,d\8\d89
 LEmployeeService/src/main/java/org/example/controller/EmployeeController.java,c\5\c5d4c296f215a3dcb59195af0016458c4c4a0d88
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+s
+CAdminService/src/main/java/org/example/AdminServiceApplication.java,b\a\ba95b6e1bbabb48f5c56098d99c1bb93e4c15e53
+I
+AdminService/build.gradle,8\9\894ce1e56666773a57452781cfac83cc34454abc
+`
+0AdminService/src/main/java/org/example/Main.java,7\9\7983a77b8271552cbdfac49a494de78f7f0c09f9
+h
+8AdminService/src/main/java/org/example/entity/Admin.java,9\a\9a536d58e8a7223c3d29225046d212b240ace7fb
+q
+AAdminService/src/main/java/org/example/constants/RestApiUrls.java,2\a\2a14739d5134f4ad75571fa9da1b9dfc71d69333
+|
+LAdminService/src/main/java/org/example/exception/GlobalExceptionHandler.java,3\9\39c3f57001752f49d6230c79a4097afb7690092e
+v
+FAdminService/src/main/java/org/example/repository/AdminRepository.java,6\d\6d159a0cfb77e48883366ffba9f355b080eb5b59
+p
+@AdminService/src/main/java/org/example/service/AdminService.java,d\9\d916362d98b6bd263db5478d445a2f4211af0507
+v
+FAdminService/src/main/java/org/example/controller/AdminController.java,2\a\2ae5098f629fdfa374fa938b5ff02f0cd658eb0f
+l
+<CompanyService/src/main/java/org/example/entity/Manager.java,2\a\2a58de4614a0fd505002f054ee1c9a95eeacf7ab
+u
+EEmployeeService/src/main/java/org/example/entity/EmployeeManager.java,c\c\cc7ebca02134a53840632083beeab28f19b64b5d

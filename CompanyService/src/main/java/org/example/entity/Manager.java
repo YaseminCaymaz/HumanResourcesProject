@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tbl_auth")
-public class Auth {
+@Table(name = "tbl_managers")
+public class Manager {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,10 +27,10 @@ public class Auth {
     private String email;
     @Size(min=11,max = 11, message = "Telefon numarasi 11 karakterli olmalidir.")
     private String phone;
-    private String companyName;
+    private Long companyId;
     private String position;
-    private int numberOfEmployees;
     private Long createAt;
     private Long updateAt;
     private Boolean isActive;
+
 }

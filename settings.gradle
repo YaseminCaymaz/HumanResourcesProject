@@ -3,4 +3,5 @@ include 'CompanyService'
 include 'AuthService'
 include 'UserService'
 include 'EmployeeService'
+include 'AdminService'
 

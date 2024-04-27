@@ -1,9 +1,12 @@
 
-k	java:S106"+Replace this use of System.out by a logger.(‚ŞÏ¥ıÿÿÿÿJ$84456310-587a-4275-98fb-c90bd1b6fca1
-L	java:S106"+Replace this use of System.out by a logger.(ßÙÜ¨øÿÿÿÿ8İäĞñ1
+Å¾
+java:S1186"â‚¬Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ã‡ÂµÃ­â€˜8Ã‹Ã”Ã±ÃÃ±1
+k	java:S106"+Replace this use of System.out by a logger.(â€šÃÃÂ¥Ã½Ã¿Ã¿Ã¿Ã¿J$84456310-587a-4275-98fb-c90bd1b6fca1
+L	java:S106"+Replace this use of System.out by a logger.(ÃŸÃ™ÃœÂ¨Ã¸Ã¿Ã¿Ã¿Ã¿8ÃÃ¤Å¾ÃÃ±1
 m
-java:S3457	"%String contains no format specifiers.(ÒŒşÿÿÿÿ8ãÏÁÊñ1J$f8b5dbc9-85f2-4274-aea7-6b12c13edac4
-r	java:S106	"+Replace this use of System.out by a logger.(ÒŒşÿÿÿÿ8äÏÁÊñ1J$31cf581c-877d-4adf-9713-9526a0043c1d
+java:S3457	"%String contains no format specifiers.(ÂÃ’Å’Å½Ã¾Ã¿Ã¿Ã¿Ã¿8Ã£ÃÃÃŠÃ±1J$f8b5dbc9-85f2-4274-aea7-6b12c13edac4
+r	java:S106	"+Replace this use of System.out by a logger.(ÂÃ’Å’Å½Ã¾Ã¿Ã¿Ã¿Ã¿8Ã¤ÃÃÃŠÃ±1J$31cf581c-877d-4adf-9713-9526a0043c1d
 B
-java:S3457"%String contains no format specifiers.(¨¿˜Ë8ŞÿĞñ1
-G	java:S106"+Replace this use of System.out by a logger.(¨¿˜Ë8ßÿĞñ1
+java:S3457"%String contains no format specifiers.(Â¨Â¿ËœÃ‹8ÃÃ¿Å¾ÃÃ±1
+G	java:S106"+Replace this use of System.out by a logger.(Â¨Â¿ËœÃ‹8ÃŸÃ¿Å¾ÃÃ±1
+

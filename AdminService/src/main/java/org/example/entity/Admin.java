@@ -8,23 +8,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tbl_company")
-public class Company {
+@Table(name = "tbl_admin")
+public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
-    private String sector;
-    private int numberOfEmployees;
-    private String address;
-    private String companyUrl;
-    @OneToMany
-    @JoinColumn(name = "company_id")
-    private List<Manager> manager;
+    @Email
+    private String email;
+    @Size(min = 6, message = "Password must be at least 6 characters long")
+    private String password;
 }

@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.utility.enums.ERole;
+import org.example.utility.enums.EStatus;
 
 @Data
 @Builder
@@ -25,6 +27,7 @@ public class Auth {
     @Column(unique = true)
     @Email
     private String email;
+    private String password;
     @Size(min=11,max = 11, message = "Telefon numarasi 11 karakterli olmalidir.")
     private String phone;
     private String companyName;
@@ -33,7 +36,13 @@ public class Auth {
     private Long createAt;
     private Long updateAt;
     private Boolean isActive;
+    @Enumerated(EnumType.STRING)
+    @Builder.Default
+    private ERole role = ERole.USER;
+    @Enumerated(EnumType.STRING)
+    @Builder.Default
+    private EStatus status = EStatus.PENDING;
+    private String activationCode;
 
 
-    private String password;
 }

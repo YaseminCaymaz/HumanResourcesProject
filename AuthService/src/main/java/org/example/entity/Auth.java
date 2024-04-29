@@ -33,4 +33,7 @@ public class Auth {
     private Long createAt;
     private Long updateAt;
     private Boolean isActive;
+
+
+    private String password;
 }

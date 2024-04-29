@@ -5,7 +5,7 @@ import org.example.dto.request.LoginRequestDto;
 import org.example.dto.request.RegisterRequestDto;
 import org.example.dto.response.BaseResponse;
 import org.example.service.AuthService;
-import org.example.utility.JwtTokenManager;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +16,7 @@ import static org.example.constants.RestApiUrls.*;
 @RequestMapping(AUTH)
 public class AuthController {
     private final AuthService authService;
-    private final JwtTokenManager jwtTokenManager;
+  //  private final JwtTokenManager jwtTokenManager;
 
 
     @PostMapping(LOGIN)

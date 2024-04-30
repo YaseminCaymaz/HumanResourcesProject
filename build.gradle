@@ -45,6 +45,7 @@ allprojects {
         implementation       libs.springBootJpa
         implementation       libs.postgresql
         implementation          libs.springBootWeb
+        implementation          libs.springBootSecurity
      //   implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
         implementation          libs.lombok
         annotationProcessor     libs.lombok

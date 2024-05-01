@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-05-01T23:44:05+0300",
+    date = "2024-05-01T23:48:37+0300",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.2 (Amazon.com Inc.)"
 )
 @Component
@@ -20,7 +20,7 @@ public class AuthMapperImpl implements AuthMapper {
             return null;
         }
 
-        Auth.AuthBuilder auth = Auth.builder();
+        Auth.AuthBuilder<?, ?> auth = Auth.builder();
 
         auth.name( dto.getName() );
         auth.surname( dto.getSurname() );
@@ -51,7 +51,7 @@ public class AuthMapperImpl implements AuthMapper {
             return null;
         }
 
-        Auth.AuthBuilder auth = Auth.builder();
+        Auth.AuthBuilder<?, ?> auth = Auth.builder();
 
         auth.name( dto.getName() );
         auth.surname( dto.getSurname() );

@@ -20,6 +20,7 @@ public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String name;
+    private Long authId;
     private String sector;
     private int numberOfEmployees;
     private String address;

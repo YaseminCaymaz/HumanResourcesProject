@@ -14,12 +14,12 @@ import java.util.Optional;
 
 @Service
 public class JwtTokenManager {
-    @Value("${jwt.secretKey}")
-    private String secretKey;
-    @Value("${jwt.issuer}")
-    private String issuer;
-    @Value("${jwt.audience}")
-    private String audience;
+
+    private String secretKey="secretKey";
+
+    private String issuer="issuer";
+
+    private String audience="audience";
 
     public Optional<String> createToken(Long id, ERole role){
         String token = null;

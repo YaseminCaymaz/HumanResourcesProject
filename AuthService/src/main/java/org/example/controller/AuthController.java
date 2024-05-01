@@ -6,7 +6,9 @@ import org.example.dto.request.RegisterRequestDto;
 import org.example.dto.response.BaseResponse;
 import org.example.service.AuthService;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import static org.example.constants.RestApiUrls.*;

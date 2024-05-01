@@ -16,6 +16,8 @@ import org.example.utility.ServiceManager;
 import org.example.utility.enums.EStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,7 +27,6 @@ import java.util.Optional;
 public class AuthService extends ServiceManager<Auth, Long> {
     private final AuthRepository authRepository;
     private final JwtTokenManager jwtTokenManager;
-
     private final AuthManager authManager;
     private final CacheManager cacheManager;
     public AuthService(AuthRepository authRepository, AuthManager authManager, JwtTokenManager jwtTokenManager, CacheManager cacheManager) {

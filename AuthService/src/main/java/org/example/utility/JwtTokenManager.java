@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Service
 public class JwtTokenManager {
-    @Value("${jwt.SECRET_KEY}")
+    @Value("${jwt.secretKey}")
     private String secretKey;
     @Value("${jwt.issuer}")
     private String issuer;

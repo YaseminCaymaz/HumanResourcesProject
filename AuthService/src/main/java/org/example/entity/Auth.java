@@ -33,8 +33,6 @@ public class Auth extends BaseEntity {
     private String companyName;
     private String position;
     private int numberOfEmployees;
-    private Long createAt;
-    private Long updateAt;
     private Boolean isActive;
     @Enumerated(EnumType.STRING)
     @Builder.Default

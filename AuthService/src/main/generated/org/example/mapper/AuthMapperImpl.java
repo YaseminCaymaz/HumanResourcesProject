@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-05-01T22:49:10+0300",
-    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21 (Oracle Corporation)"
+    date = "2024-05-01T23:44:05+0300",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.2 (Amazon.com Inc.)"
 )
 @Component
 public class AuthMapperImpl implements AuthMapper {
@@ -31,14 +31,18 @@ public class AuthMapperImpl implements AuthMapper {
     }
 
     @Override
-    public Object fromAuthToCreateUserRequestDto(Auth auth) {
+    public RegisterResponseDto fromAuthToCreateUserRequestDto(Auth auth) {
         if ( auth == null ) {
             return null;
         }
 
-        Object object = new Object();
+        RegisterResponseDto.RegisterResponseDtoBuilder registerResponseDto = RegisterResponseDto.builder();
 
-        return object;
+        registerResponseDto.email( auth.getEmail() );
+        registerResponseDto.password( auth.getPassword() );
+        registerResponseDto.activationCode( auth.getActivationCode() );
+
+        return registerResponseDto.build();
     }
 
     @Override

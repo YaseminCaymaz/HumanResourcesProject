@@ -9,7 +9,6 @@ import org.example.utility.enums.ERole;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,23 +19,6 @@ public class JwtTokenManager {
     private String issuer="issuer";
 
     private String audience="audience";
-
-   // @Value("${jwt.SECRET_KEY}")
-   private String secretKey;
-  //  @Value("${jwt.issuer}")
-   private String issuer;
-   // @Value("${jwt.audience}")
-   // private String audience;
-/*
-
-    @Value("${jwt.SECRET_KEY}")
-    private String secretKey;
-    @Value("${jwt.issuer}")
-    private String issuer;
-    @Value("${jwt.audience}")
-    private String audience;
-
-
 
     public Optional<String> createToken(Long id, ERole role){
         String token = null;
@@ -57,7 +39,6 @@ public class JwtTokenManager {
         }
     }
 
-*/
 
    public Optional<Long> validateToken(String token){
        try{

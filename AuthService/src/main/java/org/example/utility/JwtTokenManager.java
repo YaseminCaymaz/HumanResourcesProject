@@ -21,6 +21,23 @@ public class JwtTokenManager {
 
     private String audience="audience";
 
+   // @Value("${jwt.SECRET_KEY}")
+   private String secretKey;
+  //  @Value("${jwt.issuer}")
+   private String issuer;
+   // @Value("${jwt.audience}")
+   // private String audience;
+/*
+
+    @Value("${jwt.SECRET_KEY}")
+    private String secretKey;
+    @Value("${jwt.issuer}")
+    private String issuer;
+    @Value("${jwt.audience}")
+    private String audience;
+
+
+
     public Optional<String> createToken(Long id, ERole role){
         String token = null;
         Date date = new Date(System.currentTimeMillis()+(1000*60*5));
@@ -40,6 +57,7 @@ public class JwtTokenManager {
         }
     }
 
+*/
 
    public Optional<Long> validateToken(String token){
        try{
@@ -54,7 +72,6 @@ public class JwtTokenManager {
            return Optional.empty();
        }
    }
-
 
 }
 

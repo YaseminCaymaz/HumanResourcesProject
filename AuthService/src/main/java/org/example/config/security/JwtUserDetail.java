@@ -23,7 +23,7 @@ public class JwtUserDetail implements UserDetailsService {
         return null;
     }
     public UserDetails getUserByAuthId(Long authId) {
-        Optional<Auth> authUser=authRepository.findOptionalByAuthId(authId);
+        Optional<Auth> authUser=authRepository.findOptionalById(authId);
         if (authUser.isEmpty()) {
             return null;
         }

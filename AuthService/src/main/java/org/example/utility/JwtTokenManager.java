@@ -14,12 +14,22 @@ import java.util.Optional;
 
 @Service
 public class JwtTokenManager {
+
+   // @Value("${jwt.SECRET_KEY}")
+   private String secretKey;
+  //  @Value("${jwt.issuer}")
+   private String issuer;
+   // @Value("${jwt.audience}")
+   // private String audience;
+/*
+=======
     @Value("${jwt.SECRET_KEY}")
     private String secretKey;
     @Value("${jwt.issuer}")
     private String issuer;
     @Value("${jwt.audience}")
     private String audience;
+
 
     public Optional<String> createToken(Long id, ERole role){
         String token = null;
@@ -40,6 +50,7 @@ public class JwtTokenManager {
         }
     }
 
+*/
 
    public Optional<Long> validateToken(String token){
        try{
@@ -54,7 +65,6 @@ public class JwtTokenManager {
            return Optional.empty();
        }
    }
-
 
 }
 

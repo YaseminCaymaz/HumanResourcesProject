@@ -15,9 +15,9 @@ import java.util.Optional;
 @Service
 public class JwtTokenManager {
    // @Value("${jwt.SECRET_KEY}")
-    private String secretKey;
+   private String secretKey;
   //  @Value("${jwt.issuer}")
-    private String issuer;
+   private String issuer;
    // @Value("${jwt.audience}")
    // private String audience;
 /*
@@ -39,8 +39,7 @@ public class JwtTokenManager {
             return Optional.empty();
         }
     }
-
- */
+*/
    public Optional<Long> validateToken(String token){
        try{
            Algorithm algorithm = Algorithm.HMAC512(secretKey);
@@ -54,7 +53,6 @@ public class JwtTokenManager {
            return Optional.empty();
        }
    }
-
 
 }
 

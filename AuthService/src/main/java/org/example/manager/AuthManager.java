@@ -3,11 +3,12 @@ package org.example.manager;
 import io.lettuce.core.support.caching.CacheAccessor;
 import org.example.dto.response.RegisterResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import static org.example.constants.RestApiUrls.*;
+//@FeignClient(url = "http://localhost:7071/api/v1/user-profile",name = "auth-userprofile")
 
-import static org.example.constants.RestApiUrls.ACTIVATE_STATUS;
-import static org.example.constants.RestApiUrls.DELETE_BY_TOKEN;
 public interface AuthManager {
 
     @PostMapping("/create")

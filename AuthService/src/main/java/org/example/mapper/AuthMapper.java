@@ -13,7 +13,7 @@ public interface AuthMapper {
 
     Auth fromAuthRequestDto(final RegisterRequestDto dto);
 
-    Object fromAuthToCreateUserRequestDto(final Auth auth);
+    RegisterResponseDto fromAuthToCreateUserRequestDto(final Auth auth);
 
     Auth fromRegisterRequestToAuth(final RegisterRequestDto dto);
 

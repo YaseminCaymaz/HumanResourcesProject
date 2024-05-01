@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @Service
 public class JwtTokenManager {
+
    // @Value("${jwt.SECRET_KEY}")
    private String secretKey;
   //  @Value("${jwt.issuer}")
@@ -21,6 +22,15 @@ public class JwtTokenManager {
    // @Value("${jwt.audience}")
    // private String audience;
 /*
+=======
+    @Value("${jwt.SECRET_KEY}")
+    private String secretKey;
+    @Value("${jwt.issuer}")
+    private String issuer;
+    @Value("${jwt.audience}")
+    private String audience;
+
+
     public Optional<String> createToken(Long id, ERole role){
         String token = null;
         Date date = new Date(System.currentTimeMillis()+(1000*60*5));
@@ -39,7 +49,9 @@ public class JwtTokenManager {
             return Optional.empty();
         }
     }
+
 */
+
    public Optional<Long> validateToken(String token){
        try{
            Algorithm algorithm = Algorithm.HMAC512(secretKey);

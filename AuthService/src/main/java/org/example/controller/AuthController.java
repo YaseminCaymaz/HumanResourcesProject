@@ -16,6 +16,7 @@ import static org.example.constants.RestApiUrls.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(AUTH)
+
 public class AuthController {
     private final AuthService authService;
   //  private final JwtTokenManager jwtTokenManager;

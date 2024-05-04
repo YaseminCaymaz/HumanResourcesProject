@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 import static org.example.constants.RestApiUrls.*;
 //@FeignClient(url = "http://localhost:7071/api/v1/user-profile",name = "auth-userprofile")
+
 public interface AuthManager {
 
     @PostMapping("/create")

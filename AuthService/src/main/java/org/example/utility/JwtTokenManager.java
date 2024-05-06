@@ -4,8 +4,8 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import lombok.Value;
 import org.example.utility.enums.ERole;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Service
 public class JwtTokenManager {
-
+    @Value("${jwt.secretKey}:test")
     private String secretKey="secretKey";
 
     private String issuer="issuer";

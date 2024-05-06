@@ -3,8 +3,7 @@ package org.example.config;
 import io.lettuce.core.dynamic.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.Queue;
+import org.springframework.amqp.core.Queue;
 
 @Configuration
 public class RabbitMQConfig {
@@ -13,7 +12,9 @@ public class RabbitMQConfig {
 
     @Bean
     public Queue queueRegister(){
-        return new Queue(queueMailSender);
+        Queue queue = new Queue(queueMailSender);
+        return queue;
     }
+
 
 }

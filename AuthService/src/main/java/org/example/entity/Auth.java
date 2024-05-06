@@ -3,10 +3,7 @@ package org.example.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.example.utility.enums.ERole;
 import org.example.utility.enums.EStatus;
@@ -17,6 +14,7 @@ import org.example.utility.enums.EStatus;
 @NoArgsConstructor
 @Entity
 @Table(name = "tbl_auth")
+@EqualsAndHashCode(callSuper=true)
 public class Auth extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

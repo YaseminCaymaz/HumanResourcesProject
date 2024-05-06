@@ -18,7 +18,7 @@ public class MailSenderService {
 //    @EventListener(ApplicationReadyEvent.class) Uygulama ayaga kalktiginda metodun bir kerelik calistirilmasi icin.
     public void sendMail(RegisterMailModel model){
         SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setFrom("esrakaranfil@gmail.com");
+        mailMessage.setFrom("humanrecorcues@gmail.com");
         mailMessage.setTo(model.getEmail());
         mailMessage.setSubject("AKTIVASYON KODUNUZ...");
         mailMessage.setText(model.getUsername()+" Aramıza hoşgeldin!\n"+"Hesabınızı doğrulamak için aktivasyon kodunuz: "+model.getActivationCode());

@@ -3,8 +3,8 @@ server:
 
 spring:
   mail:
-    username: ai.boostjava11@gmail.com #java13mailusername ismiyle ortam degiskeni olarak eklenecek
-    password: rcxvngxvqpxdkzil #java13mailpassword ismiyle ortam degiskeni olarak eklenecek.
+    username: humanrecorcues@gmail.com #java13mailusername ismiyle ortam degiskeni olarak eklenecek
+    password: Bilgeadam13 #java13mailpassword ismiyle ortam degiskeni olarak eklenecek.
     host: smtp.gmail.com
     port: 587
     properties:

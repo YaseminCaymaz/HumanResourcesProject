@@ -4,11 +4,12 @@ import javax.annotation.processing.Generated;
 import org.example.dto.request.RegisterRequestDto;
 import org.example.dto.response.RegisterResponseDto;
 import org.example.entity.Auth;
+import org.example.rabbitmq.model.RegisterModel;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-05-01T23:48:37+0300",
+    date = "2024-05-07T23:03:24+0300",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.2 (Amazon.com Inc.)"
 )
 @Component
@@ -74,5 +75,19 @@ public class AuthMapperImpl implements AuthMapper {
         registerResponseDto.activationCode( auth.getActivationCode() );
 
         return registerResponseDto.build();
+    }
+
+    @Override
+    public RegisterModel fromAuthToRegisterModel(Auth auth) {
+        if ( auth == null ) {
+            return null;
+        }
+
+        RegisterModel.RegisterModelBuilder registerModel = RegisterModel.builder();
+
+        registerModel.authId( auth.getId() );
+        registerModel.email( auth.getEmail() );
+
+        return registerModel.build();
     }
 }

@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Service
 public class JwtTokenManager {
-    @Value("${jwt.secretKey}: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 ")
+   // @Value("${jwt.secretKey}: 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 ")
     private String secretKey="secretKey";
 
     private String issuer="issuer";

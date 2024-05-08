@@ -4,12 +4,13 @@ import javax.annotation.processing.Generated;
 import org.example.dto.request.RegisterRequestDto;
 import org.example.dto.response.RegisterResponseDto;
 import org.example.entity.Auth;
+import org.example.rabbitmq.model.RegisterModel;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-05-01T22:49:10+0300",
-    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21 (Oracle Corporation)"
+    date = "2024-05-07T23:03:24+0300",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.2 (Amazon.com Inc.)"
 )
 @Component
 public class AuthMapperImpl implements AuthMapper {
@@ -20,7 +21,7 @@ public class AuthMapperImpl implements AuthMapper {
             return null;
         }
 
-        Auth.AuthBuilder auth = Auth.builder();
+        Auth.AuthBuilder<?, ?> auth = Auth.builder();
 
         auth.name( dto.getName() );
         auth.surname( dto.getSurname() );
@@ -31,14 +32,18 @@ public class AuthMapperImpl implements AuthMapper {
     }
 
     @Override
-    public Object fromAuthToCreateUserRequestDto(Auth auth) {
+    public RegisterResponseDto fromAuthToCreateUserRequestDto(Auth auth) {
         if ( auth == null ) {
             return null;
         }
 
-        Object object = new Object();
+        RegisterResponseDto.RegisterResponseDtoBuilder registerResponseDto = RegisterResponseDto.builder();
 
-        return object;
+        registerResponseDto.email( auth.getEmail() );
+        registerResponseDto.password( auth.getPassword() );
+        registerResponseDto.activationCode( auth.getActivationCode() );
+
+        return registerResponseDto.build();
     }
 
     @Override
@@ -47,7 +52,7 @@ public class AuthMapperImpl implements AuthMapper {
             return null;
         }
 
-        Auth.AuthBuilder auth = Auth.builder();
+        Auth.AuthBuilder<?, ?> auth = Auth.builder();
 
         auth.name( dto.getName() );
         auth.surname( dto.getSurname() );
@@ -70,5 +75,19 @@ public class AuthMapperImpl implements AuthMapper {
         registerResponseDto.activationCode( auth.getActivationCode() );
 
         return registerResponseDto.build();
+    }
+
+    @Override
+    public RegisterModel fromAuthToRegisterModel(Auth auth) {
+        if ( auth == null ) {
+            return null;
+        }
+
+        RegisterModel.RegisterModelBuilder registerModel = RegisterModel.builder();
+
+        registerModel.authId( auth.getId() );
+        registerModel.email( auth.getEmail() );
+
+        return registerModel.build();
     }
 }

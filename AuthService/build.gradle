@@ -6,8 +6,14 @@ buildscript {
 }
 
 dependencies {
-   // implementation       libs.springBootDataMongo
-   // implementation       libs.springCloudConfigClient
-   // implementation       libs.springBootRabbitMQ
+    implementation       libs.springBootJpa
+    implementation       libs.postgresql
+    implementation       libs.springBootValidation
+    implementation       libs.springBootDataMongo
+    implementation       libs.springCloudConfigClient
+    implementation       libs.springBootRabbitMQ
+    implementation       libs.springCloudConfigClient
+    implementation       libs.springCloudStarterConfig
+    implementation       libs.springCloudConfigServer
 
 }

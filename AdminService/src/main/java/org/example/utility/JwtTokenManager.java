@@ -11,13 +11,13 @@ import java.util.Optional;
 @Service
 public class JwtTokenManager {
 
-    private static final String SECRETKEY = "secretkey";
+    private static final String sKey = "sKey";
     private static final String ISSUER = "issuer";
 
 
     public Optional<Long> validateToken(String token){
         try{
-            Algorithm algorithm = Algorithm.HMAC512(SECRETKEY);
+            Algorithm algorithm = Algorithm.HMAC512(sKey);
             JWTVerifier verifier = JWT.require(algorithm).withIssuer(ISSUER).build();
             DecodedJWT decodedJWT = verifier.verify(token);
             if(decodedJWT == null)

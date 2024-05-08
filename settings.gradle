@@ -1,7 +1,8 @@
 rootProject.name = 'HumanResourcesProject'
 include 'CompanyService'
 include 'AuthService'
-include 'UserService'
 include 'EmployeeService'
 include 'AdminService'
+include 'ConfigServer'
+include 'MailService'
 

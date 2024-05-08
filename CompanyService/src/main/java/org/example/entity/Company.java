@@ -19,6 +19,7 @@ import java.util.List;
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
     private String name;
     private Long authId;
     private String sector;
@@ -26,6 +27,6 @@ public class Company {
     private String address;
     private String companyUrl;
     @OneToMany
-    @JoinColumn(name = "company_id")
+    @JoinColumn(name = "manager_id")
     private List<Manager> manager;
 }

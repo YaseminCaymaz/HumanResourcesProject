@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Id;
     private Long companyId;
     @Size(min=11,max = 11, message = "TC numarası 11 karakterli olmalidir.")
     @Column(unique = true)

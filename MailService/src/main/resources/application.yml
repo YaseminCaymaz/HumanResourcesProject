@@ -18,6 +18,20 @@ spring:
     port: 5672
     username: java13
     password: 123
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: root
+    url: jdbc:postgresql://localhost:5432/HRDB
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
 
 rabbitmq:
   queue-mail-sender: mail-sender-queue
+

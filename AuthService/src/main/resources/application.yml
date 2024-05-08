@@ -21,7 +21,7 @@ spring:
     password: 123
 
 jwt:
-  sKey: ${sKey}
+  sKey: "s12345"
   audience: ${audience}
   issuer: ${issuer}
 

@@ -13,8 +13,8 @@ import java.util.Optional;
 
 @Service
 public class JwtTokenManager {
-    @Value("${jwt.secretKey}: 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 ")
-    private String secretKey="secretKey";
+    @Value("${jwt.sKey}: s12345 ")
+    private String sKey="sKey";
 
     private String issuer="issuer";
 
@@ -31,7 +31,7 @@ public class JwtTokenManager {
                     .withExpiresAt(date)
                     .withClaim("id",id)
                     .withClaim("role",role.toString())
-                    .sign(Algorithm.HMAC512(secretKey));
+                    .sign(Algorithm.HMAC512(sKey));
             return Optional.of(token);
         } catch (Exception e){
             System.out.println(e.getMessage());
@@ -42,7 +42,7 @@ public class JwtTokenManager {
 
    public Optional<Long> validateToken(String token){
        try{
-           Algorithm algorithm = Algorithm.HMAC512(secretKey);
+           Algorithm algorithm = Algorithm.HMAC512(sKey);
            JWTVerifier verifier = JWT.require(algorithm).withIssuer(issuer).build();
            DecodedJWT decodedJWT = verifier.verify(token);
            if(decodedJWT == null)

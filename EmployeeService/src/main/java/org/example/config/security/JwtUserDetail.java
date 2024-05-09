@@ -23,8 +23,8 @@ public class JwtUserDetail implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return null;
     }
-    public UserDetails getUserByAuthId(Long authId) {
-        Optional<Employee> authUser=employeeRepository.findOptionalByAuthId(authId);
+    public UserDetails getUserById(Long id) {
+        Optional<Employee> authUser=employeeRepository.findOptionalById(id);
         if (authUser.isEmpty()) {
             return null;
         }

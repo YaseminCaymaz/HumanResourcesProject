@@ -23,9 +23,9 @@ public class JwtUserDetail implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return null;
     }
-    public UserDetails getUserByAuthId(Long authId) {
-        Optional<Company> authUser=companyRepository.findOptionalByAuthId(authId);
-        if (authUser.isEmpty()) {
+    public UserDetails getUserById(Long id) {
+        Optional<Company> user=companyRepository.findOptionalById(id);
+        if (user.isEmpty()) {
             return null;
         }
         List<GrantedAuthority> yetkiListesi=new ArrayList<>();

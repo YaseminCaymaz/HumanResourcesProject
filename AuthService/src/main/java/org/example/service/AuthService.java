@@ -1,5 +1,6 @@
 package org.example.service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.example.dto.request.ActivateStatusRequestDto;
 import org.example.dto.request.LoginRequestDto;
@@ -73,13 +74,13 @@ public class AuthService extends ServiceManager<Auth, Long> {
     }
 
 
-    /* @Transactional
+     @Transactional
     public RegisterResponseDto register(RegisterRequestDto dto) {
         Auth auth = AuthMapper.INSTANCE.fromRegisterRequestToAuth(dto);
         auth.setActivationCode(CodeGenerator.generateCode());
         save(auth);
 //        try {
-        authManager.createUser(AuthMapper.INSTANCE.fromAuthToCreateUserRequestDto(auth));
+        authManager.registerUser(AuthMapper.INSTANCE.fromAuthToCreateUserRequestDto(auth));
         cacheManager.getCache("findByRole").evict(auth.getRole().toString().toUpperCase());
 //        } catch (Exception e){
 //            e.printStackTrace();
@@ -88,7 +89,7 @@ public class AuthService extends ServiceManager<Auth, Long> {
         return AuthMapper.INSTANCE.fromAuthToRegisterResponseDto(auth);
     }
 
-     */
+
     public RegisterResponseDto registerWithRabbitMQ(RegisterRequestDto dto) {
         Auth auth = AuthMapper.INSTANCE.fromRegisterRequestToAuth(dto);
         auth.setActivationCode(CodeGenerator.generateCode());

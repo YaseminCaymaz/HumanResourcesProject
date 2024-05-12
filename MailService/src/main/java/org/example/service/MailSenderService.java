@@ -24,6 +24,16 @@ public class MailSenderService {
         mailMessage.setText(model.getUsername()+" Aramıza hoşgeldin!\n"+"Hesabınızı doğrulamak için aktivasyon kodunuz: "+model.getActivationCode());
         javaMailSender.send(mailMessage);
     }
+    public void sendPasswordResetEmail(String recipientEmail, String resetToken) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(recipientEmail);
+        message.setSubject("Parola Sıfırlama");
+        message.setText("Merhaba,\n\nParolanızı sıfırlamak için aşağıdaki linke tıklayın:\n\n"
+                + "http://yourwebsite.com/reset-password?token=" + resetToken);
+
+        javaMailSender.send(message);
+        System.out.println("Parola sıfırlama maili gönderildi.");
+    }
 
 
 }

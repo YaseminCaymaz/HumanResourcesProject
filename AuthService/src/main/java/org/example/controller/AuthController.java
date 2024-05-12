@@ -33,7 +33,7 @@ public class AuthController {
     }
 
 
-   /* @PostMapping(REGISTER)
+    @PostMapping(REGISTER)
     @CrossOrigin("*")
    public ResponseEntity<BaseResponse<String>> register(@RequestBody RegisterRequestDto dto) {
         authService.save(dto);
@@ -45,7 +45,7 @@ public class AuthController {
 
     }
 
-    */
+
     @PostMapping(REGISTER_WITH_RABBITMQ)
     public ResponseEntity<RegisterResponseDto>  registerWithRabbitMq (@RequestBody @Valid RegisterRequestDto dto){
         return ResponseEntity.ok(authService.registerWithRabbitMQ(dto));

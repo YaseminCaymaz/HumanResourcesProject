@@ -11,19 +11,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tbl_employee_manager")
-public class EmployeeManager {
+@Table(name = "tbl_expenses")
+public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long employeeId;
-    private Long salary;
-    private Long prim;
-    private Long expense;
-    private int dayOff;
-    private String position;
-    //private String debit; //zimmet
-    // private Double shift; //vardiya
-    // private Double  mola; // daha sonra bakılacak
+    private String expenseType;
+    private Double amount;
+    private String currency;
+    private Long dateOfApplication;  //basvuru tarihi
+    private String status;
 
 }

@@ -14,6 +14,9 @@ public enum ErrorType {
     ERROR_DUPLICATE_USERNAME(2000,"Bu Kullanıcı adı zaten kayıtlıdır. Lütfen değiştirerek tekrar deneyiniz.",HttpStatus.BAD_REQUEST),
     ERROR_INVALID_LOGIN_PARAMETER(2001,"Kullanıcı adı ya da Şifre hatalıdır. Lütfen tekrar deneyiniz.t",HttpStatus.BAD_REQUEST),
     ERROR_CREATE_TOKEN(1003,"Token oluşturma hatası. Lütfen tekrar deneyiniz.",HttpStatus.INTERNAL_SERVER_ERROR),
+    ERROR_DEBIT_NOT_FOUND(1004,"Zimmet bulunamadı. Lütfen tekrar deneyiniz.",HttpStatus.BAD_REQUEST),
+    ERROR_EXPENSE_NOT_FOUND(1005,"Harcama bulunamadı. Lütfen tekrar deneyiniz.",HttpStatus.BAD_REQUEST),
+    ERROR_EMPLOYEE_NOT_FOUND(1006,"Personel bulunamadı. Lütfen tekrar deneyiniz.",HttpStatus.BAD_REQUEST),
     BAD_REQUEST_ERROR(1001, "Girilen parametreler hatalıdır. Lütfen düzelterek tekrar deneyiniz", HttpStatus.BAD_REQUEST);
 
     int code;

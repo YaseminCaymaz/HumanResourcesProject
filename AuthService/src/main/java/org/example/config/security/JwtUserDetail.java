@@ -1,4 +1,4 @@
-package org.example.config.security;
+/*package org.example.config.security;
 
 import org.example.entity.Auth;
 import org.example.repository.AuthRepository;
@@ -41,3 +41,6 @@ public class JwtUserDetail implements UserDetailsService {
                 .build();
     }
 }
+
+
+ */

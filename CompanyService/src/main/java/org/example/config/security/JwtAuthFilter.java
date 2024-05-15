@@ -15,7 +15,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Optional;
-
+/*
 @Slf4j
 public class JwtAuthFilter extends OncePerRequestFilter {
     @Autowired
@@ -50,3 +50,5 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
     }
 }
+
+ */

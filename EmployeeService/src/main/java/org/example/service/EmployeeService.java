@@ -44,8 +44,8 @@ public class EmployeeService {
     }
 
 
-    public List<Employee> getAllByDepartmentId(Long departmentId) {
-        List<Employee> employees = employeeRepository.findAllByDepartmentId(departmentId);
+    public List<Employee> getAllByCompanyId(Long companyId) {
+        List<Employee> employees = employeeRepository.findAllByCompanyId(companyId);
         if (employees.isEmpty()){
             throw new EmployeeServiceException(ErrorType.ERROR_EMPLOYEE_NOT_FOUND);
         }

@@ -3,6 +3,7 @@ package org.example.constants;
 public class RestApiUrls {
 
 
+
     private static final String VERSION = "/v1";
     private static final String DEV = "/dev";
 
@@ -18,7 +19,7 @@ public class RestApiUrls {
     public static final String GETBYID = "/getbyid";
     public static final String GETALL = "/getall";
     public static final String GETALLBYEMPLOYEEID = "/getallbyemployeeid";
-    public static final String GETALLBYDEPARTMENTID = "/getallbydepartmentid";
+    public static final String GETALLBYCOMPANYID = "/getallbycompanyid";
     public static final String UPDATE = "/update";
     public static final String DELETE = "/delete";
 

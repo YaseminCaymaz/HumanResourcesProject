@@ -32,6 +32,7 @@ public class Employee {
     private String email;
     @Size(min=11,max = 11, message = "Telefon numarasi 11 karakterli olmalidir.")
     private String phone;
+    private  String image;
     private String maritalStatus; // medeni hali
     private String gender;
     private Long dateOfBirth;

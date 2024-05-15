@@ -28,7 +28,7 @@ public class DebitService {
 
 
     public Debit getById(Long id) {
-        Optional<Debit> debit = debitRepository.OptionalFindById(id);
+        Optional<Debit> debit = debitRepository.findOptionalById(id);
         if (debit.isEmpty()) {
            throw new EmployeeServiceException(ErrorType.ERROR_DEBIT_NOT_FOUND);
         }

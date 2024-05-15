@@ -40,12 +40,12 @@ public class EmployeeController {
                .build());
     }
 
-    @GetMapping(GETALLBYDEPARTMENTID)
+    @GetMapping(GETALLBYCOMPANYID)
     @CrossOrigin("*")
-    public ResponseEntity<BaseResponse<List<Employee>>> getAllByDepartmentId(@RequestParam Long departmentId){
+    public ResponseEntity<BaseResponse<List<Employee>>> getAllByCompanyId(@RequestParam Long companyId){
         return ResponseEntity.ok(BaseResponse.<List<Employee>>builder()
                 .status(200)
-                .data(employeeService.getAllByDepartmentId(departmentId))
+                .data(employeeService.getAllByCompanyId(companyId))
                 .build());
     }
 

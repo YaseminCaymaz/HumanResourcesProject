@@ -2,8 +2,7 @@ package org.example.service;
 
 import lombok.RequiredArgsConstructor;
 import org.example.rabbitmq.model.RegisterMailModel;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
+import org.example.rabbitmq.model.RegisterMailModel2;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -33,6 +32,14 @@ public class MailSenderService {
 
         javaMailSender.send(message);
         System.out.println("Parola sıfırlama maili gönderildi.");
+    }
+    public void sendWelcomeMail(RegisterMailModel2 model){
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
+        mailMessage.setFrom("humanrecorcues@gmail.com");
+        mailMessage.setTo(model.getEmail());
+        mailMessage.setSubject("Hosgeldiniz!");
+        mailMessage.setText(model.getUsername()+" Aramıza hoşgeldiniz!\n");
+        javaMailSender.send(mailMessage);
     }
 
 

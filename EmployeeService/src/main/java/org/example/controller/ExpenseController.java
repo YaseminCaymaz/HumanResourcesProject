@@ -28,7 +28,7 @@ public class ExpenseController {
     }
     @GetMapping(GETBYID)
     @CrossOrigin("*")
-    public ResponseEntity<BaseResponse<Expense>> getById(@RequestParam Long id){
+    public ResponseEntity<BaseResponse<Expense>> getById(@PathVariable("id") Long id){
         return ResponseEntity.ok(BaseResponse.<Expense>builder()
                 .status(200)
                 .data(expenseService.getById(id))
@@ -45,10 +45,10 @@ public class ExpenseController {
     }
     @GetMapping(GETALLBYEMPLOYEEID)
     @CrossOrigin("*")
-    public ResponseEntity<BaseResponse<Iterable<Expense>>> getAllByEmployeeId(@RequestParam Long id){
+    public ResponseEntity<BaseResponse<Iterable<Expense>>> getAllByEmployeeId(@PathVariable("id") Long employeeId){
         return ResponseEntity.ok(BaseResponse.<Iterable<Expense>>builder()
                 .status(200)
-                .data(expenseService.getAllByEmployeeId(id))
+                .data(expenseService.getAllByEmployeeId(employeeId))
                 .build());
     }
 }

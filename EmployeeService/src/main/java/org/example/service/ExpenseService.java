@@ -42,8 +42,8 @@ public class ExpenseService {
         return expensesList;
     }
 
-    public Iterable<Expense> getAllByEmployeeId(Long id) {
-        List<Expense> expensesList = expenseRepository.findAllByEmployeeId(id);
+    public Iterable<Expense> getAllByEmployeeId(Long employeeId) {
+        List<Expense> expensesList = expenseRepository.findAllByEmployeeId(employeeId);
         if (expensesList.isEmpty()) {
             throw new EmployeeServiceException(ErrorType.ERROR_EXPENSE_NOT_FOUND);
         }

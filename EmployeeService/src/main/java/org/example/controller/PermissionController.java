@@ -1,7 +1,8 @@
 package org.example.controller;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
 import lombok.RequiredArgsConstructor;
+import org.example.dto.request.DebitAddRequestDto;
 import org.example.dto.request.PermissionRequestAddDto;
 import org.example.dto.response.BaseResponse;
 import org.example.entity.Permission;
@@ -19,9 +20,10 @@ import static org.example.constants.RestApiUrls.*;
 public class PermissionController {
     private final PermissionService permissionService;
 
+
     @PostMapping(ADD)
     @CrossOrigin("*")
-    public ResponseEntity<BaseResponse<String>> save(@RequestBody PermissionRequestAddDto dto){
+    public ResponseEntity<BaseResponse<String>> add(@RequestBody PermissionRequestAddDto dto){
         permissionService.save(dto);
         return ResponseEntity.ok(BaseResponse.<String>builder()
                 .status(200)
@@ -31,7 +33,7 @@ public class PermissionController {
 
     @GetMapping(GETALLBYEMPLOYEEID)
     @CrossOrigin("*")
-    public ResponseEntity<BaseResponse<List<Permission>>> getAllByEmployeeId(@PathVariable Long id){
+    public ResponseEntity<BaseResponse<List<Permission>>> getAllByEmployeeId(@PathVariable("id") Long id){
         return ResponseEntity.ok(BaseResponse.<List<Permission>>builder()
                 .status(200)
                 .data(permissionService.getAllByEmployeeId(id))

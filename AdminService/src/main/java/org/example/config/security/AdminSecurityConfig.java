@@ -13,6 +13,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableMethodSecurity
 @Slf4j
 public class AdminSecurityConfig {
+    /*
     @Bean
     public JwtAuthFilter getJwtAuthFilter() {
         return new JwtAuthFilter();
@@ -35,5 +36,13 @@ public class AdminSecurityConfig {
         httpSecurity.csrf(AbstractHttpConfigurer::disable);
         httpSecurity.addFilterBefore(getJwtAuthFilter(), UsernamePasswordAuthenticationFilter.class);
         return httpSecurity.build();
+    }
+
+     */
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+
+        return httpSecurity.httpBasic().disable().csrf().disable().cors().disable().build();
+
     }
 }

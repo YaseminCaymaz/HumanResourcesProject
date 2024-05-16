@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 @RequiredArgsConstructor
@@ -18,11 +18,13 @@ public class PermissionService {
     private final PermissionRepository permissionRepository;
 
     public void save(PermissionRequestAddDto dto) {
+
         permissionRepository.save(Permission.builder()
                 .employeeId(dto.getEmployeeId())
                 .permissionType(dto.getPermissionType())
                 .startDate(dto.getStartDate())
                 .endDate(dto.getEndDate())
+                .status("Beklemede")
                 .createdAt(new Date(System.currentTimeMillis()))
                 .build());
     }

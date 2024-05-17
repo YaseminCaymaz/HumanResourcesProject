@@ -8,6 +8,8 @@ import org.example.exception.ErrorType;
 import org.example.repository.PermissionRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
 
@@ -25,7 +27,8 @@ public class PermissionService {
                 .startDate(dto.getStartDate())
                 .endDate(dto.getEndDate())
                 .status("Beklemede")
-                .createdAt(new Date(System.currentTimeMillis()))
+                .createdAt(LocalDate.now())
+                .permissionTime((int) ChronoUnit.DAYS.between(dto.getEndDate(), dto.getStartDate()))
                 .build());
     }
 

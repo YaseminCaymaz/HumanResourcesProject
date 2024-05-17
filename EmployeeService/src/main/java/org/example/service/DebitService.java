@@ -27,7 +27,11 @@ public class DebitService {
 
 
     public Debit getById(Long id) {
+
         Optional<Debit> debit = debitRepository.findById(id);
+
+        Optional<Debit> debit = debitRepository.findOptionalById(id);
+
         if (debit.isEmpty()) {
            throw new EmployeeServiceException(ErrorType.ERROR_DEBIT_NOT_FOUND);
         }
@@ -42,8 +46,8 @@ public class DebitService {
        return debitList;
     }
 
-    public List<Debit> getAllByEmployeeId(Long id) {
-        List<Debit> debitList = debitRepository.findAllByEmployeeId(id);
+    public List<Debit> getAllByEmployeeId(Long employeeId) {
+        List<Debit> debitList = debitRepository.findAllByEmployeeId(employeeId);
         if (debitList.isEmpty()) {
             throw new EmployeeServiceException(ErrorType.ERROR_DEBIT_NOT_FOUND);
         }

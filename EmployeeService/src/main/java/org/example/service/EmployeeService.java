@@ -44,6 +44,15 @@ public class EmployeeService {
 
 
 
+    public List<Employee> getAllByCompanyId(Long companyId) {
+        List<Employee> employees = employeeRepository.findAllByCompanyId(companyId);
+        if (employees.isEmpty()){
+            throw new EmployeeServiceException(ErrorType.ERROR_EMPLOYEE_NOT_FOUND);
+        }
+        return employees;
+    }
+
+
     public void update(EmployeeUpdateRequestDto dto) {
         Employee employee=employeeRepository.findById(dto.getId()).orElseThrow(()->new EmployeeServiceException(ErrorType.ERROR_EMPLOYEE_NOT_FOUND));
         employee.setCompanyId(dto.getCompanyId());

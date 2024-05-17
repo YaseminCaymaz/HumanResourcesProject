@@ -10,4 +10,8 @@ import java.util.Optional;
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
 
+
+
+    List<Employee> findAllByCompanyId(Long companyId);
+
 }

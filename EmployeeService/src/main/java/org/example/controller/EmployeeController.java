@@ -33,11 +33,22 @@ public class EmployeeController {
 
     @GetMapping(GETBYID)
     @CrossOrigin("*")
-    public ResponseEntity<BaseResponse<Employee>> getById(@RequestParam Long id){
+    public ResponseEntity<BaseResponse<Employee>> getById(@PathVariable("id") Long id){
        return ResponseEntity.ok(BaseResponse.<Employee>builder()
                .status(200)
                .data(employeeService.getById(id))
                .build());
+    }
+
+
+
+    @GetMapping(GETALLBYCOMPANYID)
+    @CrossOrigin("*")
+    public ResponseEntity<BaseResponse<List<Employee>>> getAllByCompanyId(@PathVariable("companyId") Long companyId){
+        return ResponseEntity.ok(BaseResponse.<List<Employee>>builder()
+                .status(200)
+                .data(employeeService.getAllByCompanyId(companyId))
+                .build());
     }
 
 

@@ -30,7 +30,7 @@ public class DebitController {
     }
     @GetMapping(GETBYID)
     @CrossOrigin("*")
-    public ResponseEntity<BaseResponse<Debit>> getById(@RequestParam Long id){
+    public ResponseEntity<BaseResponse<Debit>> getById(@PathVariable("id") Long id){
         return ResponseEntity.ok(BaseResponse.<Debit>builder()
                 .data(debitService.getById(id))
                 .status(200)
@@ -47,7 +47,7 @@ public class DebitController {
 
     @GetMapping(GETALLBYEMPLOYEEID)
     @CrossOrigin("*")
-    public ResponseEntity<List<Debit>> getAllByEmployeeId(@RequestParam Long id){
-        return ResponseEntity.ok(debitService.getAllByEmployeeId(id));
+    public ResponseEntity<List<Debit>> getAllByEmployeeId(@PathVariable("id") Long employeeId){
+        return ResponseEntity.ok(debitService.getAllByEmployeeId(employeeId));
     }
 }

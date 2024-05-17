@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.utility.enums.EStatus;
 
 import java.util.List;
 
@@ -22,10 +23,15 @@ public class Company {
     private Long Id;
     private String name;
     private Long authId;
+    @Email
+    private String email;
     private String sector;
     private int numberOfEmployees;
     private String address;
     private String companyUrl;
+    @Enumerated(EnumType.STRING)
+    @Builder.Default
+    private EStatus status=EStatus.PENDING;
     @OneToMany
     @JoinColumn(name = "manager_id")
     private List<Manager> manager;

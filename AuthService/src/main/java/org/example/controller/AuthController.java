@@ -6,6 +6,7 @@ import org.example.dto.request.ActivateStatusRequestDto;
 import org.example.dto.request.LoginRequestDto;
 import org.example.dto.request.RegisterRequestDto;
 import org.example.dto.response.BaseResponse;
+import org.example.dto.response.LoginResponseDto;
 import org.example.dto.response.RegisterResponseDto;
 import org.example.service.AuthService;
 
@@ -27,10 +28,13 @@ public class AuthController {
 
     @PostMapping(LOGIN)
     @CrossOrigin("*")
-    public ResponseEntity<String> login(LoginRequestDto dto) {
+    public ResponseEntity<LoginResponseDto>  login(@RequestBody LoginRequestDto dto) {
 
         return ResponseEntity.ok(authService.login(dto));
+
     }
+
+
 
 
     @PostMapping(REGISTER)
@@ -54,16 +58,16 @@ public class AuthController {
     public ResponseEntity<Boolean> activateStatus(@RequestBody ActivateStatusRequestDto dto){
         return ResponseEntity.ok(authService.activateStatus(dto));
     }
-    @PostMapping(MANAGERLOGIN)
-    public ResponseEntity<String> managerLogin(@RequestBody LoginRequestDto dto){
-        return ResponseEntity.ok(authService.login(dto));
-    }
-    @PostMapping(EMPLOYEELOGIN)
-    public ResponseEntity<String> employeeLogin(@RequestBody LoginRequestDto dto){
-        return ResponseEntity.ok(authService.login(dto));
-    }
-    @PostMapping(ADMINLOGIN)
-    public ResponseEntity<String> adminLogin(@RequestBody LoginRequestDto dto){
-        return ResponseEntity.ok(authService.login(dto));
-    }
+//    @PostMapping(MANAGERLOGIN)
+//    public ResponseEntity<String> managerLogin(@RequestBody LoginRequestDto dto){
+//        return ResponseEntity.ok(authService.login(dto));
+//    }
+//    @PostMapping(EMPLOYEELOGIN)
+//    public ResponseEntity<String> employeeLogin(@RequestBody LoginRequestDto dto){
+//        return ResponseEntity.ok(authService.login(dto));
+//    }
+//    @PostMapping(ADMINLOGIN)
+//    public ResponseEntity<String> adminLogin(@RequestBody LoginRequestDto dto){
+//        return ResponseEntity.ok(authService.login(dto));
+//    }
 }

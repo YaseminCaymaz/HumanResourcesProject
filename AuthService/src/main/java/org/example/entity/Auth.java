@@ -35,7 +35,7 @@ public class Auth extends BaseEntity {
     private Boolean isActive;
     @Enumerated(EnumType.STRING)
     @Builder.Default
-    private ERole role = ERole.USER;
+    private ERole role = ERole.MANAGER;
     @Enumerated(EnumType.STRING)
     @Builder.Default
     private EStatus status = EStatus.PENDING;

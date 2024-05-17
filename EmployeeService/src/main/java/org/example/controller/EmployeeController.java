@@ -40,14 +40,6 @@ public class EmployeeController {
                .build());
     }
 
-    @GetMapping(GETALLBYDEPARTMENTID)
-    @CrossOrigin("*")
-    public ResponseEntity<BaseResponse<List<Employee>>> getAllByDepartmentId(@RequestParam Long departmentId){
-        return ResponseEntity.ok(BaseResponse.<List<Employee>>builder()
-                .status(200)
-                .data(employeeService.getAllByDepartmentId(departmentId))
-                .build());
-    }
 
     @PostMapping(UPDATE)
     @Transactional

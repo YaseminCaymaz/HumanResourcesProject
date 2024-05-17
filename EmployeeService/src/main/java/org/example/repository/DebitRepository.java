@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface DebitRepository extends JpaRepository<Debit, Long> {
-    Optional<Debit> OptionalFindById(Long id);
+    Optional<Debit> findById(Long id);
 
     List<Debit> findAllByEmployeeId(Long id);
 }

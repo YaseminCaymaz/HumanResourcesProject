@@ -9,6 +9,7 @@ public class RestApiUrls {
     private static final String ROOT = DEV + VERSION;
 
     public static final String EMPLOYEE = ROOT + "/employee";
+    public static final String EMPLOYEEMANAGER = ROOT + "/employee-manager";
     public static final String DEBIT = ROOT + "/debit";
     public static final String EXPENSE = ROOT + "/expense";
 
@@ -21,6 +22,8 @@ public class RestApiUrls {
     public static final String GETALLBYDEPARTMENTID = "/getallbydepartmentid";
     public static final String UPDATE = "/update";
     public static final String DELETE = "/delete";
+    public static final String ACTIVATE_STATUS = "/activate-status/{email}";
+    public static final String INACTIVE_STATUS = "/inactive-status/{email}";
 
 
 

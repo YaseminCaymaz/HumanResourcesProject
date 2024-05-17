@@ -30,7 +30,6 @@ public class EmployeeService {
         employee.setGender(dto.getGender());
         employee.setDateOfBirth(dto.getDateOfBirth());
         employee.setRole(ERole.EMPLOYEE);
-        employee.setCreateAt(System.currentTimeMillis());
         employeeRepository.save(employee);
     }
 
@@ -44,13 +43,6 @@ public class EmployeeService {
     }
 
 
-    public List<Employee> getAllByDepartmentId(Long departmentId) {
-        List<Employee> employees = employeeRepository.findAllByDepartmentId(departmentId);
-        if (employees.isEmpty()){
-            throw new EmployeeServiceException(ErrorType.ERROR_EMPLOYEE_NOT_FOUND);
-        }
-        return employees;
-    }
 
     public void update(EmployeeUpdateRequestDto dto) {
         Employee employee=employeeRepository.findById(dto.getId()).orElseThrow(()->new EmployeeServiceException(ErrorType.ERROR_EMPLOYEE_NOT_FOUND));

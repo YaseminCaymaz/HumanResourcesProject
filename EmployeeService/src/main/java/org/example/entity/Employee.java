@@ -7,15 +7,16 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 import org.example.utility.enums.ERole;
 
 @Data
-@Builder
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "tbl_employee")
-public class Employee {
+public class Employee extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
@@ -36,9 +37,8 @@ public class Employee {
     private String gender;
     private Long dateOfBirth;
     private int numberOfChildren;
-    private Long createAt;
-    private Long updateAt;
     private Boolean isActive;
+    @Enumerated(EnumType.STRING)
     private ERole role;
     @OneToOne
     @JoinColumn(name = "employeeManagerId")

@@ -40,6 +40,8 @@ public class EmployeeController {
                .build());
     }
 
+
+
     @GetMapping(GETALLBYCOMPANYID)
     @CrossOrigin("*")
     public ResponseEntity<BaseResponse<List<Employee>>> getAllByCompanyId(@PathVariable("companyId") Long companyId){
@@ -48,6 +50,7 @@ public class EmployeeController {
                 .data(employeeService.getAllByCompanyId(companyId))
                 .build());
     }
+
 
     @PostMapping(UPDATE)
     @Transactional

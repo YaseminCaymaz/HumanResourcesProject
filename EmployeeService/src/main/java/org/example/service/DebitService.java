@@ -3,7 +3,6 @@ package org.example.service;
 import lombok.RequiredArgsConstructor;
 import org.example.dto.request.DebitAddRequestDto;
 import org.example.entity.Debit;
-import org.example.entity.Expense;
 import org.example.exception.EmployeeServiceException;
 import org.example.exception.ErrorType;
 import org.example.repository.DebitRepository;
@@ -28,7 +27,11 @@ public class DebitService {
 
 
     public Debit getById(Long id) {
+
+        Optional<Debit> debit = debitRepository.findById(id);
+
         Optional<Debit> debit = debitRepository.findOptionalById(id);
+
         if (debit.isEmpty()) {
            throw new EmployeeServiceException(ErrorType.ERROR_DEBIT_NOT_FOUND);
         }

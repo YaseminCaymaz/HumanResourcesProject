@@ -2,9 +2,11 @@ package org.example.service;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.example.dto.request.ActivateStatusRequestDto;
 import org.example.dto.request.LoginRequestDto;
 import org.example.dto.request.RegisterRequestDto;
+import org.example.dto.response.LoginResponseDto;
 import org.example.dto.response.RegisterResponseDto;
 import org.example.entity.Auth;
 import org.example.exception.AuthServiceException;
@@ -26,8 +28,9 @@ import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-
+@Slf4j
 @Service
+
 public class AuthService extends ServiceManager<Auth, Long> {
     private final AuthRepository authRepository;
     private final JwtTokenManager jwtTokenManager;
@@ -59,19 +62,24 @@ public class AuthService extends ServiceManager<Auth, Long> {
         );
     }
 
-    public String login(LoginRequestDto dto) {
+    public LoginResponseDto login(LoginRequestDto dto) {
         Optional<Auth> auth = authRepository.findByEmailAndPassword(dto.getEmail(), dto.getPassword());
         if(auth.isEmpty()){
             throw new AuthServiceException(ErrorType.ERROR_INVALID_LOGIN_PARAMETER);
         }
         if(auth.get().getStatus().equals(EStatus.ACTIVE)){
-            return jwtTokenManager.createToken(auth.get().getId(),auth.get().getRole())
+            String token= jwtTokenManager.createToken(auth.get().getId(),auth.get().getRole())
                     .orElseThrow(()->{throw new AuthServiceException(ErrorType.ERROR_CREATE_TOKEN);});
+           return LoginResponseDto.builder().token(token).role(auth.get().getRole().toString()).build();
+
         }
         else {
             throw new AuthServiceException(ErrorType.ERROR_ACCOUNT_NOT_ACTIVE);
         }
+
     }
+
+
 
 
      @Transactional
@@ -93,6 +101,8 @@ public class AuthService extends ServiceManager<Auth, Long> {
     public RegisterResponseDto registerWithRabbitMQ(RegisterRequestDto dto) {
         Auth auth = AuthMapper.INSTANCE.fromRegisterRequestToAuth(dto);
         auth.setActivationCode(CodeGenerator.generateCode());
+
+
         try {
             save(auth);
             registerProducer.sendNewUser(AuthMapper.INSTANCE.fromAuthToRegisterModel(auth));
@@ -100,6 +110,8 @@ public class AuthService extends ServiceManager<Auth, Long> {
                     .email(auth.getEmail())
                     .activationCode(auth.getActivationCode())
                     .build());
+
+
             cacheManager.getCache("findByRole").evict(auth.getRole().toString().toUpperCase());
         } catch (Exception e){
             throw new AuthServiceException(ErrorType.USER_NOT_CREATED);

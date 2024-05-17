@@ -65,3 +65,13 @@ n
 >AuthService/src/main/java/org/example/service/AuthService.java,f\d\fdb8f42eb0e8359454a6acf46e32c3a6fbe072ba
 x
 HAuthService/src/main/java/org/example/dto/response/LoginResponseDto.java,a\f\afdbaa9554a0e34e920ca0574630d9851f9481b3
+h
+8AdminService/src/main/java/org/example/entity/Admin.java,9\a\9a536d58e8a7223c3d29225046d212b240ace7fb
+z
+JCompanyService/src/main/java/org/example/controller/CompanyController.java,2\0\2052cd6f942396763ca7b278ee21554da796b7c0
+l
+<CompanyService/src/main/java/org/example/entity/Manager.java,2\a\2a58de4614a0fd505002f054ee1c9a95eeacf7ab
+l
+<CompanyService/src/main/java/org/example/entity/Company.java,6\d\6d1567d1f822d3f8f6c33cadaacee5a20d627f0d
+m
+=EmployeeService/src/main/java/org/example/entity/Expense.java,f\9\f993aef3a3ccbb1d7d7e14dc768f3e88e994715d

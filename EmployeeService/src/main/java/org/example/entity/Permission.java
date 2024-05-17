@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -20,9 +21,10 @@ public class Permission {
     private Long id;
     private Long employeeId;
     private String permissionType;
-    private Date startDate;
-    private Date endDate;
-    private Date createdAt;
+    private int permissionTime;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private LocalDate createdAt;
     private String status;
 
 

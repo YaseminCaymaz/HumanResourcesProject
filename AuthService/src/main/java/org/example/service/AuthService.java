@@ -1,7 +1,6 @@
 package org.example.service;
 
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
 import org.example.dto.request.ActivateStatusRequestDto;
 import org.example.dto.request.LoginRequestDto;
 import org.example.dto.request.RegisterRequestDto;

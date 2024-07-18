@@ -36,7 +36,7 @@ public class AuthController {
     @PostMapping(REGISTER)
     @CrossOrigin("*")
    public ResponseEntity<BaseResponse<String>> register(@RequestBody RegisterRequestDto dto) {
-        authService.save(dto);
+        authService.register(dto);
         return ResponseEntity.ok(BaseResponse.<String>builder()
                         .status(200)
                         .message("Kayıt Başarılı")

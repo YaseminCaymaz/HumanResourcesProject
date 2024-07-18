@@ -106,6 +106,8 @@ public class AuthService extends ServiceManager<Auth, Long> {
         }
         return AuthMapper.INSTANCE.fromAuthToRegisterResponseDto(auth);
     }
+
+
     public Boolean activateStatus(ActivateStatusRequestDto dto) {
         Optional<Auth> optionalAuth = findById(dto.getAuthId());
         if(optionalAuth.isEmpty()){

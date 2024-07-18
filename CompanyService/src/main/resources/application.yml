@@ -1,6 +1,17 @@
 server:
   port: 9092
-
+feign:
+  client:
+    config:
+      default:
+        connect-timeout: 5000
+        read-timeout: 5000
+        logger-level: basic
+        ssl:
+          enabled: true
+          trust-store: classpath:truststore.jks
+          trust-store-password: password
+          trust-store-type: JKS
 spring:
   rabbitmq:
     host: localhost

@@ -12,18 +12,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-
-public class CompanyAddRequestDto {
+public class CompanyUpdateRequestDto {
 
     @NotEmpty
     private String companyName;
-    private String surname;
-
     @NotEmpty
     @Email
     private String email;
-    private String password;
-    private Long authId;
+    @NotEmpty
+    @Enumerated
+    private Enum status;
 
+    private String token;
+    private String sector;
 
 }

@@ -15,5 +15,5 @@ dependencies {
     implementation       libs.springCloudConfigClient
     implementation       libs.springCloudStarterConfig
     implementation       libs.springCloudConfigServer
-
+implementation libs.springOpenFeign
 }

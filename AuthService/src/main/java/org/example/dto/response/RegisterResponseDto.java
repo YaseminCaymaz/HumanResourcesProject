@@ -15,5 +15,6 @@ public class RegisterResponseDto {
     private String username;
     private String email;
     private String password;
+    private Long authId;
     private String activationCode;
 }
